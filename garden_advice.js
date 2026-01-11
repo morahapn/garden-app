@@ -1,9 +1,16 @@
 // This app gives gardening tips based on month and season
 
-// TODO: Create a function to return tips for a given month
-// TODO: Replace hardcoded tips with a data structure
-// TODO: Add comments to explain the code
+// Object storing gardening tips by month
+const tips = {
+  January: "Start pruning and preparing your garden beds",
+  February: "Check soil moisture levels",
+};
 
-const januaryTips = "Start pruning and preparing your garden beds.";
+// Function to return tip for a given month
+function getTip(month) {
+  // Check if the month exists in the tips object
+  return tips[month] || "No tips available";
+}
 
-console.log(januaryTips);
+// Print January tip to console
+console.log(getTip("January"));
