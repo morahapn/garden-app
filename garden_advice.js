@@ -1,16 +1,38 @@
-// This app gives gardening tips based on month and season
+// Garden Advice App
+// This app gives gardening tips based on the month and season
 
-// Object storing gardening tips by month
-const tips = {
+// List of gardening tips by month
+const monthTips = {
   January: "Start pruning and preparing your garden beds",
   February: "Check soil moisture levels",
 };
 
-// Function to return tip for a given month
-function getTip(month) {
-  // Check if the month exists in the tips object
-  return tips[month] || "No tips available";
+// Returns gardening advice for a given month
+function getMonthTip(month) {
+  if (!monthTips[month]) {
+    return "Please enter a valid month";
+  }
+
+  return monthTips[month];
 }
 
-// Print January tip to console
-console.log(getTip("January"));
+// List of gardening tips by season
+const seasonTips = {
+  Summer: "Water plants early in the morning",
+  Winter: "Protect plants from frost",
+};
+
+// Returns gardening advice for a given season
+function getSeasonTip(season) {
+  if (!seasonTips[season]) {
+    return "Please enter a valid season";
+  }
+
+  return seasonTips[season];
+}
+
+// Example usage
+console.log(getMonthTip("January"));
+console.log(getMonthTip("March")); // invalid month
+console.log(getSeasonTip("Summer"));
+console.log(getSeasonTip("Rainy")); // invalid season
